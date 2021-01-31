@@ -780,7 +780,7 @@ extension HomeViewController: UITableViewDelegate {
 }
 
 extension HomeViewController: HomeDayNightViewDelegate {
-    func writeButtonTouchUp(_ sender: UIButton) {
+    func pushToMoodViewController(_ sender: UIButton) {
         // 업로드 뷰로 푸쉬
         let onboardingStoryboard = UIStoryboard(name: Constants.Name.onboardingStoryboard, bundle: nil)
         guard let moodViewController = onboardingStoryboard.instantiateViewController(identifier: Constants.Identifier.moodViewController) as? MoodViewController else {
@@ -790,7 +790,7 @@ extension HomeViewController: HomeDayNightViewDelegate {
         self.navigationController?.pushViewController(moodViewController, animated: true)
     }
     
-    func showAllButtonTouchUp(_ sender: UIButton, diaryId: Int) {
+    func pushToDiaryViewController(_ sender: UIButton, diaryId: Int) {
         // 다이어리 뷰로 푸쉬
         let diaryStoryboard = UIStoryboard(name: Constants.Name.diaryStoryboard, bundle: nil)
         guard let diaryViewController = diaryStoryboard.instantiateViewController(identifier: Constants.Identifier.diaryViewController) as? DiaryViewController else {

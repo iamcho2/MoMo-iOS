@@ -8,8 +8,8 @@
 import UIKit
 
 protocol HomeDayNightViewDelegate: class {
-    func writeButtonTouchUp(_ sender: UIButton)
-    func showAllButtonTouchUp(_ sender: UIButton, diaryId: Int)
+    func pushToMoodViewController(_ sender: UIButton)
+    func pushToDiaryViewController(_ sender: UIButton, diaryId: Int)
 }
 
 class HomeDayNightView: UIView {
@@ -160,11 +160,11 @@ class HomeDayNightView: UIView {
     }
     
     @IBAction func writeButtonTouchUp(_ sender: UIButton) {
-        self.homeDayNightViewDelegate?.writeButtonTouchUp(self.writeButton)
+        self.homeDayNightViewDelegate?.pushToMoodViewController(self.writeButton)
     }
     
     @IBAction func showAllButtonTouchUp(_ sender: UIButton) {
-        self.homeDayNightViewDelegate?.showAllButtonTouchUp(self.showAllButton, diaryId: diaryId)
+        self.homeDayNightViewDelegate?.pushToDiaryViewController(self.showAllButton, diaryId: diaryId)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
