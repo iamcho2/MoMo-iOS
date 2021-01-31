@@ -557,12 +557,12 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - @IBAction Properties
     
-    @IBAction func touchUpHomeTopButton(_ sender: Any) {
+    @IBAction func touchHomeTopButton(_ sender: Any) {
         homeTableView.setContentOffset(.zero, animated: true)
         swipeUpButton.isHidden = true
     }
     
-    @IBAction func touchUpUploadButton(_ sender: Any) {
+    @IBAction func touchUploadButton(_ sender: Any) {
         let onboardingStoryboard = UIStoryboard(name: Constants.Name.onboardingStoryboard, bundle: nil)
         guard let dvc = onboardingStoryboard.instantiateViewController(identifier: Constants.Identifier.moodViewController) as? MoodViewController else {
             return
@@ -571,7 +571,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
-    @IBAction func touchUpListButton(_ sender: Any) {
+    @IBAction func touchListButton(_ sender: Any) {
         let listStoryboard = UIStoryboard(name: Constants.Name.listStoryboard, bundle: nil)
         guard let dvc = listStoryboard.instantiateViewController(identifier: Constants.Identifier.listViewController) as? ListViewController else {
             return
@@ -581,7 +581,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         
         self.navigationController?.pushViewController(dvc, animated: true)
     }
-    @IBAction func touchUpCalendarButton(_ sender: Any) {
+    @IBAction func touchCalendarButton(_ sender: Any) {
         let uploadModalViewController = UploadModalViewController()
         
         uploadModalViewController.modalPresentationStyle = .custom
